@@ -1,14 +1,12 @@
 import random
 
 print("I'm going to guess your age.")
-
 name = input("What is your name? ")
 guesses = []
 guessed = False
 
 while not guessed:
     guess = random.randint(15, 30)
-    
     if guess in guesses:
         continue
     
