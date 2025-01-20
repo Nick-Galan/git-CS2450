@@ -1,16 +1,23 @@
 import random
-print("im going to guess your name")
-name = input("what is your name?")
+
+print("I'm going to guess your age.")
+
+name = input("What is your name? ")
 guesses = []
 guessed = False
-while(guessed == False):
+
+while not guessed:
     guess = random.randint(15, 30)
+    
     if guess in guesses:
-        continue:
-    user_response = input("are you"+str(guess)+"years old?")
-    if user_response == 'y' or user_response == 'Y':
-        print(f"Haha! {name} is" + str(guess)+ "years old i guessed it!")
+        continue
+    
+    guesses.append(guess)
+    
+    user_response = input(f"Are you {guess} years old? (y/n): ")
+    
+    if user_response.lower() == 'y':
+        print(f"Haha! {name} is {guess} years old. I guessed it!")
         guessed = True
     else:
-        print("rats")
-        
+        print("Rats, I guessed wrong!")
